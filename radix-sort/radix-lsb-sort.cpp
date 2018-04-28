@@ -31,7 +31,6 @@ void leArquivo(string nomeArquivo, string conteudo[], int *nValores)
 void escreveArquivo(string nomeArquivo, string conteudo[], int nValores)
 {
     ofstream arq (nomeArquivo);
-    string buffer;
 
     if (! (arq.is_open()))
     {
@@ -75,6 +74,7 @@ void radixLsbSort(string conteudo[], int nValores, int nSimbolos)
             conteudo[j] = temp[j];
         }
     }
+    free(temp);
 }
 
 int main(int argc, char *argv[])
@@ -84,8 +84,8 @@ int main(int argc, char *argv[])
 
     if (argc !=3)
     {
-        printf("\nNumero incorredo de parametros.");
-        printf("\nUso correto: radix-lsb-sort.exe <nome_arquivo_entrada.csv> <nome_arquivo_saida.csv>\n");
+        cout << "\nNumero incorredo de parametros.";
+        cout << "\nUso correto: radix-lsb-sort.exe <nome_arquivo_entrada.csv> <nome_arquivo_saida.csv>\n";
     }
     else
     {
